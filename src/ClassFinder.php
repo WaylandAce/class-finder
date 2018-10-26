@@ -201,7 +201,7 @@ class ClassFinder implements IClassFinder
                     if ($file instanceof SplFileInfo)
                     {
                         $fqcn = (string)Str::s($file->getRelativePathname())
-                        ->trimRight('.php')
+                        ->removeRight('.php')
                         ->replace('/', '\\')
                         ->ensureLeft($ns);
 
