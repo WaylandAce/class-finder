@@ -1,5 +1,5 @@
 {
-    "name": "gears/class-finder",
+    "name": "waylandace/class-finder",
     "description": "Utility class to help you discover other classes / namespaces based on the composer auto loader.",
     "homepage": "https://github.com/phpgearbox/class-finder",
     "keywords": ["class", "finder", "discover", "reflection"],
