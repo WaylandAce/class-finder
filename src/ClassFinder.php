@@ -230,19 +230,19 @@ class ClassFinder implements IClassFinder
             try
             {
                 $rClass = new ReflectionClass($fqcn);
+                
+                if ($this->filter === null)
+                {
+                    $result = $this->defaultFilter($rClass);
+                }
+                else
+                {
+                    $result = call_user_func($this->filter, $rClass);
+                }
             }
             catch (ReflectionException $e)
             {
                 $result = false;
-            }
-
-            if ($this->filter === null)
-            {
-                $result = $this->defaultFilter($rClass);
-            }
-            else
-            {
-                $result = call_user_func($this->filter, $rClass);
             }
 
             if ($result === false)
